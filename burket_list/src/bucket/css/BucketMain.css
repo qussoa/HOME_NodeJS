@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "SangSangShinb7";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.1/SangSangShinb7.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+  header {
+    margin-top: 50px;
+    color: #274555;
+    font-family: "SangSangShinb7";
+    font-size: 50px;
+    font-weight: bold;
+  }
+  h2 {
+    font-family: "SangSangShinb7";
+    font-size: 50px;
+    margin-bottom: -20px;
+    font-weight: bold;
+  }
+  
+  * {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    background-image: url("/background-cr.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .info_p {
+    font-family: "SangSangShinb7";
+    font-size: 50px;
+    color: #274555;
+  }
+  

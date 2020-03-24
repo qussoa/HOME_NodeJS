@@ -1,0 +1,26 @@
+.input_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn_save {
+  background-image: url("/save-icon.png");
+  background-repeat: no-repeat;
+  background-size: 50px;
+  width: 50px;
+  height: 45px;
+  border: 0;
+  outline: 0;
+}
+.input-box {
+  background-image: url("/input-box.png");
+  background-repeat: no-repeat;
+  /* align-items: center; */
+  /* justify-content: center; */
+  background-size: 343px;
+  width: 345px;
+  height: 41px;
+  border: 0;
+  margin: 0;
+}

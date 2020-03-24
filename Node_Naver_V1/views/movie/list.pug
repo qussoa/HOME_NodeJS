@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+
+    each movie,index in movies
+        div#page_content.w3-main.w3-content.w3-center
+            div.w3-col-padding.w3-center
+                div#quarterbox.w3-quarter
+                    img(src=movie.image)
+                    h4 
+                        a(href=movie.link) !{movie.title}
+                    p#subtitle= movie.subtitle
+                    p#pubDate= movie.pubDate
+                    p#director= movie.director
+                    p#actor.elipsis= movie.actor
+
+                // html 코드에 보이는 주석
+                //- html 코드에 보이지 않는 주석
+                //- !{} : html tag가 포함된 문자열을 tag를 반영하면서 

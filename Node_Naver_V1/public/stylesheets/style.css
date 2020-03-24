@@ -1,0 +1,31 @@
+#page_content{
+  max-width:1200px;
+  margin-top:100px;
+  justify-items: center;
+}
+#quarterbox{
+  height: 300px;
+  width: 150px;
+  margin-bottom: 100px;
+}
+
+img{
+  width:70%
+}
+
+#subtitle{
+  font-size: 14px;
+}
+
+#director{
+  font-size: 12px;
+}
+
+#actor{
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+

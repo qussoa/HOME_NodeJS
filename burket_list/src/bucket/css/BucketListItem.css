@@ -1,0 +1,29 @@
+.btn-del {
+  background-image: url("/del-icon.png");
+  background-repeat: no-repeat;
+  background-size: 50px;
+  width: 50px;
+  height: 45px;
+  border: 0;
+  outline: 0;
+}
+
+.btn-confirm{
+  background-image: url("/save-icon.png");
+  background-repeat: no-repeat;
+  background-size: 50px;
+  width: 50px;
+  height: 45px;
+  border: 0;
+  outline: 0;
+}
+
+.handle-input{
+  background-image: url("/input-box.png");
+  background-repeat: no-repeat;
+  background-size: 300px;
+  width: 303px;
+  height: 36px;
+  outline: 0;
+  border: 0;
+}

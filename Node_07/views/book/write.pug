@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+
+    form(method='POST').w3-container
+        script.
+            $(function(){
+                $(".btn-delete").click(function(){
+                    if(confirm("삭제할까요?")){
+                        document.location.replace("/book/delete/#{book._id}")
+                    }                    
+                })
+                $("btn-list").click(function(){
+                    document.location.replace("/book")
+                })
+            })            
+        fieldset.w3-border-blue
+            if formTitle == 'UPDATE'
+                legend 도서정보수정
+            else 
+                legend 도서정보입력
+            - var inputClassess = ['w3-input','w3-border']
+            .w3-container
+                lable(for="bTitle").w3-text-blue 도서명
+                input#bTitle(name="bTitle",value=book.bTitle,class=inputClassess)
+            .w3-container
+                lable(for="bWriter").w3-text-blue 저자
+                input#bTitle(name="bWriter",value=book.bWriter,class=inputClassess)
+            .w3-container
+                lable(for="bComp").w3-text-blue 출판사
+                input#bComp(name="bComp",value=book.bComp,class=inputClassess)
+            .w3-container
+                lable(for="bPrice").w3-text-blue 가격
+                input#bPrice(name="bPrice",value=book.bPrice,class=inputClassess)
+            - var btnClassess = ['w3-button','w3-right']
+
+            button(class=btnClassess).w3-blue.btn-save 저장
+            if formTitle == 'UPDATE'
+            button(type="button",class=btnClassess).w3-red.btn-delete 삭제
+            button(type="button",class=btnClassess).w3-green.btn-list 목록
+

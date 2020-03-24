@@ -1,0 +1,85 @@
+extends ../layout
+
+block content
+    script.
+        $(function(){
+            $('div').addClass('w3-padding-16')
+            $('input').addClass('w3-input w3-border w3-hover-light-gray')
+            $('label').addClass('w3-text-blue w3-bold')
+
+            $('button.btn-list').click(function(){
+                document.location.replace('/gallery')
+            })
+            
+            var updateCB = function(){
+                $.ajax({
+                    url : '/gallery/update/#{gallery._id}',
+                    type : 'PUT',
+                    data : $('form').serialize()
+                })
+                .done(function(result){
+                    // 성공시
+                    if(result.msg == 'OK'){
+                        alert(result.data.nModified + '개의 변경 성공')
+                        document.location.replace('/gallery/view/#{gallery._id}')
+                    }else if(result.msg == 'UPDATE FAIL'){
+                        if(result.data.nModified <1){
+                            alert('데이터 업데이트 실패 ')
+                        }
+                    }
+                })
+                .fail(function(err){
+                    // 실패시
+                    alert('서버와 통신 오류')
+                })
+                .always(function(){
+                    // 항상 
+                   // alert('항상 완료 ')
+                })
+            }
+
+            let version = '!{gallery.__v}'
+
+            $('button.btn-save').click(function(){
+                if(version != ''){
+                    updateCB()
+                    //alert('수정')
+                    return false
+                }
+                    alert('추가')
+                if($('#gStrTitle').val() ==''){
+                    alert('사진제목을 입력')
+                    $('button.btn-list').fucus
+                    return false
+                } 
+                if($('#strText').val() ==''){
+                    alert('사진설명 입력')
+                    $('#strText').fucus()
+                    return false
+                } 
+                if($('#gOriginalPhotoName').val() ==''){
+                    alert('사진 파일 선택')
+                    $('#gOriginalPhotoName').fucus()
+                    return false
+                } 
+                $('form').submit()
+            })
+        })
+    section.w3-container.w3-padding-32
+        form(method='POST',encType='multipart/form-data')
+            div
+                lable 제목
+                input#gStrTitle(name='gStrTitle',value=gallery.gStrTitle)
+            div
+                lable 설명
+                input#gStrText(name='gStrText',value=gallery.gStrText)
+            div
+                lable 원본사진
+                input#gOriginalPhotoName(type='file',name='gOriginalPhotoName',value=gallery.gOriginalPhotoName)
+            div
+                lable 시각
+                input#gUploadStartDate(name='gUploadStartDate',value=gallery.gUploadStartDate)
+            div
+                button.w3-button.w3-green.w3-right.btn-list(type="button") 목록
+                button.w3-button.w3-blue.w3-right.btn-save(type="button") 저장
+                

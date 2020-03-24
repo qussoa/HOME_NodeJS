@@ -1,0 +1,26 @@
+div.form {
+  display: flex;
+}
+
+div.form input {
+  flex: 1;
+  font-size: 1.25rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid teal;
+}
+
+div.todo_insert {
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  background-color: teal;
+  border-radius: 3px;
+  color: wheat;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+div.todo_insert:hover {
+  background-color: wheat;
+  color: teal;
+}

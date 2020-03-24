@@ -1,0 +1,11 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  font-family: Bitgoeul_Bold;
+  color: #00B7FF;
+}
+
+@font-face { font-family: 'Bitgoeul_Bold'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.2/Bitgoeul_Bold.woff') format('woff'); font-weight: normal; font-style: normal; }

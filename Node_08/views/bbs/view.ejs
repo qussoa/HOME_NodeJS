@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include ('../include-head') %>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                let thisClass = $(this).attr('class')
+               // alert(thisClass)
+               /*
+                문자열.indexOf(찾을 문자열)
+                문자열내에 찾을 문자열을 찾고 없을 시 0미만을 return
+                있으면 무조건 0보다 큰 값 return 
+                문자열 내 문자열이 있는 검사하는 코드 
+               */
+                if(thisClass.indexOf("btn-delete") != -1){
+                    if(confirm("삭제할까?")){
+                        document.location.replace("/bbs/delete/<%- bbs.b_id %>")
+                    }
+                    return false
+                }else if(thisClass.indexOf("btn-update") != -1){
+                    document.location.href = "/bbs/update/<%- bbs.b_id %>" 
+                    return false
+                }else if(thisClass.indexOf("btn-list") != -1){
+                    document.location.href = "/bbs"
+                    return false
+                }
+            })
+        })
+    </script>
+    <style>
+        table.tb_view{
+            background-color: #E9ECEF;
+        }
+        table.tb_view th{
+            background-color: #E9ECEF;
+            text-align: right;
+        
+        }
+        table.tb_view td{
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <%- include ('../include-header') %>
+    <section class="container-fluid">
+        <table class="w3-table-all tb-view">
+            <tr>
+                <th>작성일자</th><td><%- bbs.b_date %></td>
+                <th>작성시각</th><td><%- bbs.b_time %></td>
+                <th>작성자</th>  <td><%- bbs.b_writer %></td>
+                <th>조회수</th>  <td><%- bbs.b_count %></td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td colspan="7"><%- bbs.b_subject %></td>
+            </tr>
+            <tr>
+                <td colspan="8"><%- bbs.b_text %></td>
+            </tr>
+        </table>
+
+    </section>
+    <section class="container-fluid ">
+        <button class="w3-button w3-right w3-pink btn-update">수정</button>
+        <button class="w3-button w3-right w3-pink btn-delete">삭제</button>
+        <button class="w3-button w3-right w3-pink btn-list">목록</button>
+    </section>
+</body>
+</html>

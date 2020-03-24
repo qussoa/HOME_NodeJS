@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    style.
+        .elipsis {
+             width : 100px;
+            white-space : nowrap;
+            overflow : hidden;
+            text-overflow : ellipsis;
+        }
+
+    each book,index in books
+        div#page_content.w3-main.w3-content.w3-center
+            div.w3-col-padding.w3-center
+                div.w3-quarter
+                    img(src=book.image)
+                    h4.elipsis 
+                        a(href=book.link) !{book.title}
+                    p.elipsis= book.author
+                    p= book.publicsher
+                    p= book.price
+                    p.elipsis= book.description

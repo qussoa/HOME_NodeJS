@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+    section.container-fluid
+        table.w3-table.w3-table-all
+            tr
+                th NO	
+                th 정류장 ID	
+                th 정류장(kr)
+                th 정류장(en)
+                th 다음 정류장
+                th 위도	
+                th 경도     	
+            each station,index in stations
+                tr
+                    td= station.STATION_NUM
+                    td= station.BUSSTOP_ID
+                    td= station.BUSSTOP_NAME
+                    td= station.NAME_E
+                    td= station.NEXT_BUSSTOP
+                    td= station.LATITUDE
+                    td= station.LONGITUDE
+
+        include ../page_list
+                
+                
+                

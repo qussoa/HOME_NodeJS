@@ -1,0 +1,22 @@
+nav.main-menu {
+  background-color: wheat;
+  list-style: none;
+  display: flex;
+}
+
+nav.main-menu ul li {
+  display: inline-block;
+}
+
+nav.main-menu ul li a {
+  display: inline-block;
+  padding: 8px;
+  text-decoration: none;
+  background-color: wheat;
+  color: teal;
+}
+
+nav.main-menu ul li a:hover {
+  background-color: teal;
+  color: wheat;
+}
